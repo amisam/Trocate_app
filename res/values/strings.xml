@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Trocate</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    
+    <string name="action_settings">Settings</string>
+
+    <string name="searchFilter">Search Filter</string>
+    <string name="filterBinPrompt">Enter # of bins</string>
+    <string name="allBins">All Bins</string>
+    <string name="generalWaste">Litter Bin</string>
+    <string name="recycling">Recyclable</string>
+    <string name="skipBin">Skip</string>
+    <string name="otherComments">Comments</string>
+
+    <string name="addBinTxt">Add A Bin</string>
+    <string name="litterBinTxt">Litter Bin</string>
+    <string name="recyclingBinTxt">Recycling Bin</string>
+    <string name="skipBinTxt">Skip Bin</string>
+    <string name="clothingBinTxt">Clothing Bin</string>
+    <string-array name="addBinSpinner">
+        <item>Litter Bin</item>
+        <item>Recycling Bin</item>
+        <item>Skip Bin</item>
+        <item>Clothing Bin</item>
+    </string-array>
+
+
+    <string name="settingsBtn">Settings</string>
+    <string name="refreshBtn">Find</string>
+	<string name="applyFilterBtn">Apply</string>
+	<string name="addBinBtn">Add</string>
+	<string name="backBtn">Back To Map</string>
+	<color name="white">#FFFFFF</color>
+
+</resources>

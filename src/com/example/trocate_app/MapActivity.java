@@ -1,23 +1,21 @@
 package com.example.trocate_app;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
 import android.location.Criteria;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.example.trocate.GlobalVariables;
-import com.example.trocate.R;
 import com.example.trocate_app.util.SystemUiHider;
-
-import com.example.trocate_app.SettingActivity.XmlParseTask;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -34,7 +32,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * 
  * @see SystemUiHider
  */
-public class MapActivity extends Activity {
+public class MapActivity extends FragmentActivity implements LocationListener, OnMarkerClickListener{
 	/**
 	 * Whether or not the system UI should be auto-hidden after
 	 * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -71,7 +69,7 @@ public class MapActivity extends Activity {
 	private GoogleMap binMap;
 	private String[] binLocations;
 	private String[] searchArgs;
-	private XmlParseTask mAuthTask;
+	private searchMap smAuthTask;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -169,8 +167,8 @@ public class MapActivity extends Activity {
 		searchArgs = new String[4];
 		searchArgs[0] = String.valueOf(location.getLatitude());
 		searchArgs[1] = String.valueOf(location.getLongitude());
-		searchArgs[2] = String.valueOf(GlobalVariables.displayNumber);
-		searchArgs[3] = String.valueOf(GlobalVariables.filter.name());
+		//searchArgs[2] = String.valueOf(GlobalVariables.displayNumber);
+		//searchArgs[3] = String.valueOf(GlobalVariables.filter.name());
 
 		LatLng myLocation = new LatLng(location.getLatitude(),location.getLongitude());
 		CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(myLocation, 18);
@@ -184,8 +182,8 @@ public class MapActivity extends Activity {
 
 		binMap.setMyLocationEnabled(false);
 
-		mAuthTask = new XmlParseTask();
-		mAuthTask.execute((Void) null);
+		smAuthTask = new searchMap();
+		smAuthTask.execute((Void) null);
 
 
 
@@ -232,4 +230,60 @@ public class MapActivity extends Activity {
 		mHideHandler.removeCallbacks(mHideRunnable);
 		mHideHandler.postDelayed(mHideRunnable, delayMillis);
 	}
+
+	@Override
+	public boolean onMarkerClick(Marker mark) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override public void onLocationChanged(Location location) {}
+	@Override public void onStatusChanged(String provider, int status, Bundle extras) {}
+	@Override public void onProviderEnabled(String provider) {}
+	@Override public void onProviderDisabled(String provider) {}
+	
+	private class searchMap extends AsyncTask<Void, Void, Boolean>{
+
+		@Override
+		protected Boolean doInBackground(Void... params) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(final Boolean success){
+			for(int i = 0; i < binLocations.length; i++){
+				String[] split = binLocations[i].split("\t");
+				LatLng llMarker = new LatLng(Double.parseDouble(split[0]), Double.parseDouble(split[1]));
+
+				MarkerOptions binMarker = new MarkerOptions();
+				binMarker.position(llMarker);
+				String[] titleSplit = split[2].trim().split("_");
+				binMarker.title(titleSplit[0]+" "+titleSplit[1]);
+
+/*
+				if(split[2].equalsIgnoreCase(GlobalVariables.LITTER_BIN))
+					binMarker.icon(BitmapDescriptorFactory.fromResource( R.drawable.trashlogo));
+					//litter icon
+				else if (split[2].equalsIgnoreCase(GlobalVariables.RECYCLING_BIN))
+					binMarker.icon(BitmapDescriptorFactory.fromResource( R.drawable.recyclelogo));
+					// recycling icon
+				else if (split[2].equalsIgnoreCase(GlobalVariables.SKIP_BIN))
+					binMarker.icon(BitmapDescriptorFactory.fromResource( R.drawable.skipbinlogo));
+					// skip bin icon
+				else
+					// default icon
+					binMarker.icon(BitmapDescriptorFactory.fromResource( R.drawable.trashlogo));
+*/
+				binMap.addMarker(binMarker);
+
+			}
+		}
+			@Override
+			protected void onCancelled(){
+				smAuthTask = null;
+			}
+		
+	}
+	
 }

@@ -13,6 +13,7 @@
     <string name="generalWaste">Litter Bin</string>
     <string name="recycling">Recyclable</string>
     <string name="skipBin">Skip</string>
+    <string name="clothingBin">Clothing Bin</string>
     <string name="otherComments">Comments</string>
 
     <string name="addBinTxt">Add A Bin</string>
@@ -34,5 +35,11 @@
 	<string name="addBinBtn">Add</string>
 	<string name="backBtn">Back To Map</string>
 	<color name="white">#FFFFFF</color>
+	
+	<string name="cdAddBin">Add a new bin</string>
+	<string name="cdSelectBins">Bins to choose from</string>
+	<string name="cdApplyBtn">Apply search options</string>
+	<string name="cdAddBinBtn">Add bin at this location</string>
+	<string name="cdReturnBtn">Return to trocate map</string>
 
 </resources>

@@ -1188,9 +1188,10 @@ containing a value of this type.
         public static final int return_button=0x7f020078;
         public static final int search=0x7f020079;
         public static final int settings=0x7f02007a;
-        public static final int skipbinlogo=0x7f02007b;
-        public static final int trashlogo=0x7f02007c;
-        public static final int usermarker=0x7f02007d;
+        public static final int settings_background=0x7f02007b;
+        public static final int skipbinlogo=0x7f02007c;
+        public static final int trashlogo=0x7f02007d;
+        public static final int usermarker=0x7f02007e;
     }
     public static final class id {
         public static final int action_bar=0x7f06001f;
@@ -1205,8 +1206,18 @@ containing a value of this type.
         public static final int action_menu_presenter=0x7f06001a;
         public static final int action_mode_close_button=0x7f060027;
         public static final int activity_chooser_view_content=0x7f060028;
+        public static final int addBinBtn=0x7f06004e;
+        public static final int addBinSpinner=0x7f06004a;
+        public static final int addBinTxt=0x7f06004d;
         public static final int always=0x7f06000f;
+        public static final int applyBtn=0x7f06004f;
+        public static final int backBtn=0x7f06004c;
         public static final int beginning=0x7f060014;
+        public static final int binTypeRadio1=0x7f060045;
+        public static final int binTypeRadio2=0x7f060046;
+        public static final int binTypeRadio3=0x7f060047;
+        public static final int binTypeRadio4=0x7f060048;
+        public static final int binTypeRadio5=0x7f060049;
         public static final int checkbox=0x7f060030;
         public static final int collapseActionView=0x7f060011;
         public static final int default_activity_button=0x7f06002b;
@@ -1217,8 +1228,7 @@ containing a value of this type.
         public static final int end=0x7f060016;
         public static final int expand_activities_button=0x7f060029;
         public static final int expanded_menu=0x7f06002f;
-        public static final int findBtn=0x7f060041;
-        public static final int fullscreen_content_controls=0x7f060040;
+        public static final int findBtn=0x7f060040;
         public static final int home=0x7f060017;
         public static final int homeAsUp=0x7f060009;
         public static final int hybrid=0x7f060004;
@@ -1232,10 +1242,13 @@ containing a value of this type.
         public static final int never=0x7f06000d;
         public static final int none=0x7f060000;
         public static final int normal=0x7f060001;
+        public static final int numOfBinsTxtField=0x7f060043;
         public static final int progress_circular=0x7f06001b;
         public static final int progress_horizontal=0x7f06001c;
         public static final int radio=0x7f060032;
+        public static final int radioBinTypeGroup=0x7f060044;
         public static final int satellite=0x7f060002;
+        public static final int searchFilter=0x7f060042;
         public static final int search_badge=0x7f060035;
         public static final int search_bar=0x7f060034;
         public static final int search_button=0x7f060036;
@@ -1246,7 +1259,8 @@ containing a value of this type.
         public static final int search_plate=0x7f060039;
         public static final int search_src_text=0x7f06003a;
         public static final int search_voice_btn=0x7f06003e;
-        public static final int settingsBtn=0x7f060042;
+        public static final int selectedBinTxt=0x7f06004b;
+        public static final int settingsBtn=0x7f060041;
         public static final int shortcut=0x7f060031;
         public static final int showCustom=0x7f06000b;
         public static final int showHome=0x7f060008;
@@ -1311,8 +1325,10 @@ containing a value of this type.
         public static final int abc_popup_menu_item_layout=0x7f030014;
         public static final int abc_search_dropdown_item_icons_2line=0x7f030015;
         public static final int abc_search_view=0x7f030016;
-        public static final int activity_map=0x7f030017;
-        public static final int support_simple_spinner_dropdown_item=0x7f030018;
+        public static final int adapter_text=0x7f030017;
+        public static final int map_activity=0x7f030018;
+        public static final int settings=0x7f030019;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001a;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1356,11 +1372,11 @@ containing a value of this type.
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f070025;
         public static final int action_settings=0x7f07002a;
-        public static final int addBinBtn=0x7f07003a;
-        public static final int addBinTxt=0x7f070032;
+        public static final int addBinBtn=0x7f07003b;
+        public static final int addBinTxt=0x7f070033;
         public static final int allBins=0x7f07002d;
         public static final int app_name=0x7f070027;
-        public static final int applyFilterBtn=0x7f070039;
+        public static final int applyFilterBtn=0x7f07003a;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1384,8 +1400,14 @@ containing a value of this type.
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f070014;
-        public static final int backBtn=0x7f07003b;
-        public static final int clothingBinTxt=0x7f070036;
+        public static final int backBtn=0x7f07003c;
+        public static final int cdAddBin=0x7f07003d;
+        public static final int cdAddBinBtn=0x7f070040;
+        public static final int cdApplyBtn=0x7f07003f;
+        public static final int cdReturnBtn=0x7f070041;
+        public static final int cdSelectBins=0x7f07003e;
+        public static final int clothingBin=0x7f070031;
+        public static final int clothingBinTxt=0x7f070037;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1461,15 +1483,15 @@ containing a value of this type.
         public static final int dummy_content=0x7f070029;
         public static final int filterBinPrompt=0x7f07002c;
         public static final int generalWaste=0x7f07002e;
-        public static final int litterBinTxt=0x7f070033;
-        public static final int otherComments=0x7f070031;
+        public static final int litterBinTxt=0x7f070034;
+        public static final int otherComments=0x7f070032;
         public static final int recycling=0x7f07002f;
-        public static final int recyclingBinTxt=0x7f070034;
-        public static final int refreshBtn=0x7f070038;
+        public static final int recyclingBinTxt=0x7f070035;
+        public static final int refreshBtn=0x7f070039;
         public static final int searchFilter=0x7f07002b;
-        public static final int settingsBtn=0x7f070037;
+        public static final int settingsBtn=0x7f070038;
         public static final int skipBin=0x7f070030;
-        public static final int skipBinTxt=0x7f070035;
+        public static final int skipBinTxt=0x7f070036;
     }
     public static final class style {
         /** 
